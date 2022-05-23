@@ -1,0 +1,36 @@
+body {
+  background-image: url("../images/01-Lucid_Air_v_Model_S.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* have image be full size of webpage by using 100 instead of contain */
+  background-size: cover;
+ } 
+
+/* body { 
+  background-image: url(../images/charlie-deets-AkgALppFIwo-unsplash.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* color: white; */
+/* } */ */
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  background-color: rgb(0, 0, 0, 0.5);
+  width: 500px;
+  padding: 30px;
+  color: white;
+  font-weight: bolder;
+}
+
+.text {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

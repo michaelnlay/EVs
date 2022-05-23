@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      background: url(../static/images/ev1.jpg) no-repeat center center fixed;
+      background-size: cover;
+      height: 100%;
+      overflow: hidden;
+    }
+    .text{
+      color:white;
+      padding:20px;
+      text-align: center;
+      
+  }
+  </style>
+
+  <body>
+    <div class="container">
+      <!-- <h1>Editing Car NO. {{car.id}}</h1> -->
+      {% with messages = get_flashed_messages() %}
+      <!-- declare a variable called messages -->
+      {% if messages %}
+      <!-- check if there are any messages -->
+      {% for message in messages %}<!-- loop through the messages -->
+      <p class="text-danger">{{message}}</p>
+      <!-- display each message in a paragraph tag -->
+      {% endfor %} {% endif %} {% endwith %}
+
+      <a class="btn btn-outline-light float-end mt-2 float-end" href="/logout"
+        >LOGOUT</a
+      >
+      <a
+        class="btn btn-outline-light float-end mt-2, m-2 float-end"
+        href="/dashboard"
+        >ALL EVs</a
+      >
+      <h1 class="text">ADD NEW CAR</h1>
+
+      <form action="/car/{{car.id}}/update" method="post">
+        <div class="mb-3">
+          <label for="brand" class="form-label">Brand: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="brand"
+            value="{{car.brand}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="model" class="form-label">Model: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="model"
+            value="{{car.model}}"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="purchased_date" class="form-label"
+            >Purchased Date:
+          </label>
+          <input
+            type="date"
+            class="form-control"
+            name="purchased_date"
+            value="{{car.purchased_date}}"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description: </label>
+          <input
+            type="description"
+            class="form-control"
+            name="description"
+            value="{{car.description}}"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success">Update Car</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      background: url(../static/images/lucid-air-2021-597671.jpg) no-repeat center center fixed;
+      background-size: cover;
+      height: 100%;
+      overflow: hidden;
+    }
+    .text{
+      color:white;
+      padding:20px;
+      text-align: center;
+      
+  }
+  </style>
+
+  <body>
+    <div class="container">
+      <a class="btn btn-outline-light float-end mt-2 float-end" href="/logout"
+        >LOGOUT</a
+      >
+      <a
+        class="btn btn-outline-light float-end mt-2, m-2 float-end"
+        href="/dashboard"
+        >ALL EVs</a
+      >
+
+      <div class="container">
+        <h1 class="text">Car Information for Owner ID No. {{car.id}}</h1>
+
+        <h1>Brand: {{car.brand}}</h1>
+        <br />
+        <h4>Model: {{car.model}}</h4>
+
+        <h4>Purchase Date: {{car.purchased_date}}</h4>
+        <h4>Description: {{car.description}}</h4>
+        <br />
+
+        <h5>Owner: {{car.user.first_name}} {{car.user.last_name}}</h5>
+      </div>
+    </div>
+  </body>
+</html>

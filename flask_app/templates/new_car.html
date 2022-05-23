@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      background: url(../static/images/nio.jpg) no-repeat center center fixed;
+      background-size: cover;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .box {
+      background-color: rgb(0, 0, 0, 0.5);
+      width: 500px;
+      padding: 30px;
+      color: white;
+      font-weight: bolder;
+    }
+  </style>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages() %}
+      <!-- declare a variable called messages -->
+      {% if messages %}
+      <!-- check if there are any messages -->
+      {% for message in messages %}<!-- loop through the messages -->
+      <p class="text-danger">{{message}}</p>
+      <!-- display each message in a paragraph tag -->
+      {% endfor %} {% endif %} {% endwith %}
+      <!-- <h1>Python Exam Day!</h1> -->
+      <a
+        class="btn btn-outline-light float-end mt-2, m-2 float-end"
+        href="/dashboard"
+        >ALL EVs</a
+      >
+      <a class="btn btn-outline-light float-end mt-2 float-end" href="/logout"
+        >Logout</a
+      >
+      <!-- <div class="container"> -->
+      <h1 class="text-white">Add New Car</h1>
+
+      <form class="box" action="/create_car" method="post">
+        <div class="mb-3">
+          <label for="brand" class="form-label">Brand: </label>
+          <input type="text" class="form-control" name="brand" />
+        </div>
+        <div class="mb-3">
+          <label for="model" class="form-label">Model: </label>
+          <input type="text" class="form-control" name="model" />
+        </div>
+        <!-- <div class="mb-3">
+          <label for="price" class="form-label">Price ($): </label>
+          <input type="currency" class="form-control" name="price" />
+        </div> -->
+        <div class="mb-3">
+          <label for="purchased_date" class="form-label">Purchase Date: </label>
+          <input type="date" class="form-control" name="purchased_date" />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description: </label>
+          <input type="description" class="form-control" name="description" />
+        </div>
+
+        <button type="submit" class="btn btn-outline-light">ADD</button>
+      </form>
+    </div>
+    <!-- </div> -->
+  </body>
+</html>
